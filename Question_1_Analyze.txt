@@ -1,0 +1,45 @@
+════════════════════════════════════════════════════════════
+Question 1: วิเคราะห์ - Cooling_Tower System
+Controller: P | Analysis & Design Method: Root Locus
+════════════════════════════════════════════════════════════
+
+【 Process Description 】
+
+Cooling water outlet temperature
+
+Transfer Function:
+  G(s) = 0.50*exp(-7.40*s)/((6.11*s+1)*(4.40*s+1))
+
+MATLAB: tf(0.50, conv([6.11 1],[4.40 1]), 'InputDelay', 7.40)
+
+Parameters:
+  • K = 0.50 degC per m3 per min
+  • tau1 = 6.11 min
+  • tau2 = 4.40 min
+  • theta = 7.40 min
+
+【 Performance Requirements 】
+
+✓ Settling Time (2% band):  <= 61.1 min
+✓ Overshoot:                 <= 16%
+✓ Phase Margin:              >= 49 deg
+✓ Gain Margin:               >= 9 dB
+
+【 Questions 】
+
+1. Analyze System Characteristics (7 points)
+   • Identify poles and zeros (LHP/RHP)
+   • Calculate time constants
+   • Identify system type and ess
+
+2. Analyze Stability using Root Locus (7 points)
+   • Analyze system using specified method
+   • Check stability
+   • Find stability margins
+
+3. Analyze Performance (6 points)
+   • Frequency domain: bandwidth, resonance
+   • Time domain: rise time, settling time, overshoot
+   • Disturbance rejection capability
+   • Sensitivity analysis
+
